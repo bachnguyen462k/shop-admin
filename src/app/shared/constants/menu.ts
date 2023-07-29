@@ -2,6 +2,7 @@ interface NavBarMenu {
   url: string;
   title: string;
   icon?: string;
+
 }
 
 export const NON_AUTH_MENU: NavBarMenu[] = [
@@ -21,17 +22,33 @@ export const NON_AUTH_MENU: NavBarMenu[] = [
 
 export const AUTH_MENU: NavBarMenu[] = [
   {
-    url: '',
-    title: 'Home',
+    url: 'san-pham',
+    title: 'Sản phẩm',
+    icon: 'bi bi-cart',
   },
   {
-    url: 'editor',
-    title: 'New Article',
-    icon: 'fa-solid fa-pen-to-square',
+    url: 'danh-muc',
+    title: 'Danh mục',
+    icon: 'bi bi-list-task',
   },
   {
-    url: 'settings',
-    title: 'Settings',
-    icon: 'fa-solid fa-gear',
+    url: 'don-hang',
+    title: 'Đơn hàng',
+    icon: 'bi bi-bag',
   },
+];
+
+
+export const AUTH_MENU_CUSTOMERS: NavBarMenu[] = [
+  {
+    url: 'nguoi-dung',
+    title: 'Người dùng',
+    icon: 'bi bi-people',
+  },
+  {
+    url: 'danh-gia',
+    title: 'Đánh giá',
+    icon: 'bi bi-star',
+  },
+  
 ];

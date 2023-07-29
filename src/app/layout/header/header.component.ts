@@ -6,7 +6,7 @@ import {
   inject
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { AUTH_MENU, NON_AUTH_MENU } from 'src/app/shared/constants';
+import { AUTH_MENU, NON_AUTH_MENU,AUTH_MENU_CUSTOMERS } from 'src/app/shared/constants';
 import { AuthStore } from 'src/app/shared/store';
 
 @Component({
@@ -25,6 +25,9 @@ export class HeaderComponent {
     } else {
       return NON_AUTH_MENU;
     }
+  });
+  readonly menuCustomer = computed(() => {
+      return AUTH_MENU_CUSTOMERS;
   });
   readonly currentUser = this.#authStore.selectors.user;
 }

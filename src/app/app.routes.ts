@@ -15,28 +15,35 @@ export const routes: Routes = [
     canMatch: [nonAuthGuard],
   },
   {
-    path: 'editor',
-    loadChildren: () => import('./editor/editor.routes'),
-    canMatch: [authGuard],
-    title: 'Editor',
-  },
-  {
-    path: 'settings',
-    loadComponent: () => import('./setting/setting.component'),
-    canMatch: [authGuard],
-    title: 'Settings',
-  },
-  {
-    path: 'article/:slug',
-    loadComponent: () => import('./article-detail/article-detail.component'),
-  },
-  {
-    path: ':username',
-    loadChildren: () => import('./profile/profile.routes'),
-  },
-  {
     path: '',
-    loadComponent: () => import('./home/home.component'),
-    title: 'Home',
+    loadComponent: () => import('./layout/main/main.component'),
+    canMatch: [authGuard],
+    children:[
+      {
+        path: 'editor',
+        loadChildren: () => import('./editor/editor.routes'),
+        canMatch: [authGuard],
+        title: 'Editor',
+      },
+      {
+        path: 'settings',
+        loadComponent: () => import('./setting/setting.component'),
+        canMatch: [authGuard],
+        title: 'Settings',
+      },
+      {
+        path: 'article/:slug',
+        loadComponent: () => import('./article-detail/article-detail.component'),
+      },
+      {
+        path: ':username',
+        loadChildren: () => import('./profile/profile.routes'),
+      },
+      {
+        path: '',
+        loadComponent: () => import('./home/home.component'),
+        title: 'Home',
+      },
+    ],
   },
 ];
