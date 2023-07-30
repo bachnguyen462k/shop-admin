@@ -32,6 +32,12 @@ export const routes: Routes = [
         title: 'Settings',
       },
       {
+        path: 'san-pham',
+        loadComponent: () => import('./product/product.component'),
+        canMatch: [authGuard],
+        title: 'Sản phẩm',
+      },
+      {
         path: 'article/:slug',
         loadComponent: () => import('./article-detail/article-detail.component'),
       },
@@ -42,7 +48,7 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () => import('./home/home.component'),
-        title: 'Home',
+        title: 'Trang chủ',
       },
     ],
   },
