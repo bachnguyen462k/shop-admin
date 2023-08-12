@@ -57,6 +57,21 @@
                       </li>
                     </ng-container>
                   </li>
+                  <li class="nav-item mt-6 mb-3">
+                    <span class="nav-label">Hệ thống</span>
+                    <ng-container *ngFor="let item of menuCustomer(); let idx = index">
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="item.url" routerLinkActive="active"
+                          [routerLinkActiveOptions]="{ exact: true }">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-icon">
+                              <i [class]="item.icon"></i></span>
+                            <span class="nav-link-text">{{ item.title }}</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ng-container>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -124,6 +139,21 @@
                   <li class="nav-item mt-6 mb-3">
                     <span class="nav-label">Người dùng</span>
                     <ng-container *ngFor="let item of menuCustomer(); let idx = index">
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="item.url" routerLinkActive="active"
+                          [routerLinkActiveOptions]="{ exact: true }">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-icon">
+                              <i [class]="item.icon"></i></span>
+                            <span class="nav-link-text">{{ item.title }}</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ng-container>
+                  </li>
+                  <li class="nav-item mt-6 mb-3">
+                    <span class="nav-label">Hệ thống</span>
+                    <ng-container *ngFor="let item of menuHeThong(); let idx = index">
                       <li class="nav-item">
                         <a class="nav-link" [routerLink]="item.url" routerLinkActive="active"
                           [routerLinkActiveOptions]="{ exact: true }">

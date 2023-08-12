@@ -49,6 +49,18 @@ export const AUTH_MENU_CUSTOMERS: NavBarMenu[] = [
     url: 'danh-gia',
     title: 'Đánh giá',
     icon: 'bi bi-star',
+  },  
+];
+
+export const AUTH_MENU_HETHONG: NavBarMenu[] = [
+  {
+    url: 'nguoi-dung',
+    title: 'Người dùng',
+    icon: 'bi bi-people',
   },
-  
+  {
+    url: 'danh-gia',
+    title: 'Đánh giá',
+    icon: 'bi bi-star',
+  },  
 ];

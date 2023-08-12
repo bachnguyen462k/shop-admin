@@ -42,6 +42,26 @@ export const routes: Routes = [
         loadComponent: () => import('./article-detail/article-detail.component'),
       },
       {
+        path: 'danh-muc',
+        loadComponent: () => import('./category/category.component'),
+        canMatch: [authGuard],
+        title: 'Danh mục',
+      },
+      {
+        path: 'don-hang',
+        loadComponent: () => import('./order/order.component'),
+        canMatch: [authGuard],
+        title: 'Đơn hàng',
+        children:[
+          {
+            path: 'editor',
+            loadChildren: () => import('./editor/editor.routes'),
+            canMatch: [authGuard],
+            title: 'Editor',
+          },
+        ]
+      },
+      {
         path: ':username',
         loadChildren: () => import('./profile/profile.routes'),
       },
